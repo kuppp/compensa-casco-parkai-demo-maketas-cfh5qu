@@ -83,37 +83,68 @@ styleClass="p-button-primary p-mb-2 p-mr-2 btn"
       <p-toolbar>
         <div class="p-toolbar-group-left">
           <p-button
-            label="Įtraukti naują"
+            label="Įtraukti"
             icon="pi pi-plus"
-            iconPos="left" (click)="showDialogAddVehicles();"
-            styleClass="p-button-success p-button-outlined p-mb-2 p-m-2 btn p-button-sm"
+            iconPos="left" (click)="showDialogAddVehicles();ImportTab = false; printTab=false"
+            styleClass="p-button-success p-button-outlined p-m-1 btn p-button-sm"
           ></p-button>
           <p-button
             label="Importuoti"
             icon="pi pi-arrow-circle-down"
             iconPos="left"
-            (click)="ImportTab = true"
-            styleClass="p-button-success p-button-outlined p-mb-2 p-m-2  btn p-button-sm"
+            (click)="ImportTab = true; printTab = false;"
+            styleClass="p-button-success p-m-1  btn p-button-sm"
           ></p-button>
+          <p-button
+          label="Generuoti"
+          icon="pi pi-spinner"
+          iconPos="left"
+          (click)="ImportTab = false; printTab=false"
+          styleClass="p-button-success p-button-outlined  p-m-1  btn p-button-sm"
+        ></p-button>
+        <p-button
+        label="Pašalinti"
+        icon="pi pi-minus-circle"
+        iconPos="left"
+        (click)="ImportTab = false; printTab=false"
+        styleClass="p-button-success p-button-outlined  p-m-1  btn p-button-sm"
+      ></p-button>
+      <p-button
+      label="Sunaikinti"  (click)="ImportTab = false; printTab=false"
+      icon="pi pi-times"
+      iconPos="left"
+      styleClass="p-button-success p-button-outlined  p-m-1  btn p-button-sm"
+    ></p-button>
+    <p-button
+    label="Spausdinti"
+    icon="pi pi-file-pdf"
+    iconPos="left"
+    (click)="printTab = true; ImportTab = false"
+    styleClass="p-button-success  p-m-1 btn p-button-sm"
+  ></p-button>
 
-          <p-splitButton
-            label="Pažymėtiems"
-            icon="pi pi-ellipsis-v"
-            (onClick)="save()"
-            [model]="actionMenuItems"
-            styleClass=" p-button-outlined p-mr-2 btn p-inputbutton-sm"
-          >
-          </p-splitButton>
-          <p-splitButton
-            label="Spausdinti"
-            icon="pi "
-            (onClick)="save()"
-            [model]="printMenuItems"
-            styleClass="p-button-outlined p-mr-2 btn p-splitbutton-sm"
-          >
-          </p-splitButton>
         </div>
       </p-toolbar>
+    </div>
+    <div class="card right" *ngIf="printTab">
+    <p-toolbar>
+      <div class="p-toolbar-group-left">
+        <p-button
+          label="Generalinė sutartis"
+          icon="pi pi-file-pdf"
+          iconPos="left"
+          styleClass="p-button-success p-button-outlined p-m-1 btn p-button-sm"
+        ></p-button>
+
+        <p-button
+          label="Liudijimas"
+          icon="pi pi-file-pdf"
+          iconPos="left"
+        
+          styleClass="p-button-success p-button-outlined p-m-1 btn p-button-sm"
+        ></p-button>
+      </div>
+    </p-toolbar>
     </div>
 
     <div class="card right" *ngIf="ImportTab">
@@ -123,7 +154,7 @@ styleClass="p-button-primary p-mb-2 p-mr-2 btn"
             label="Atsisiųsti šabloną"
             icon="pi pi-file-excel"
             iconPos="left"
-            styleClass="p-button-success p-button-outlined  p-mb-2 p-m-2  btn"
+            styleClass="p-button-success p-button-outlined p-m-1 btn p-button-sm"
           ></p-button>
 
           <p-button
@@ -131,7 +162,7 @@ styleClass="p-button-primary p-mb-2 p-mr-2 btn"
             icon="pi pi-paperclip"
             iconPos="left"
             (click)="filepresent = true"
-            styleClass="p-button-success p-button-outlined  p-mb-2 p-m-2  btn"
+            styleClass="p-button-success p-button-outlined p-m-1 btn p-button-sm"
           ></p-button>
 
           <div id="dropArea" *ngIf="!filepresent">įkelkite failą</div>
