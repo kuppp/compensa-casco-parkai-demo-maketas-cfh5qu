@@ -29,13 +29,21 @@ styleClass="p-button-primary p-mb-2 p-mr-2 btn"
 
 <div class="p-grid">
   <div class="p-col"><label for="policyholder" class="p-col-3">Draudėjas</label></div>
-  <div class="p-col"><input id="policyholder" type="text" pInputText value="UAB TRANSPORTO ĮMONĖ" /></div>
+  <div class="p-col"><input id="policyholder" type="text" pInputText value="UAB TRANSPORTO ĮMONĖ" style="width:100%" /></div>
   <div class="p-col"><label for="policyholdercode" class="p-col-3 ">Kodas</label></div>
   <div class="p-col"><input id="policyholder" type="text" pInputText value="10999939"/></div>
 </div>
+
+<div class="p-grid">
+<div class="p-col"><label for="policyholder" class="p-col-3">Draudikas</label></div>
+<div class="p-col"><input id="policyholder" type="text" pInputText value="COMPENSA LIETUVA" style="width:100%" /></div>
+<div class="p-col"><label for="policyholdercode" class="p-col-3 ">Kodas</label></div>
+<div class="p-col"><input id="policyholder" type="text" pInputText value="1100000001"/></div>
+</div>
+
 <div class="p-grid">
 <div class="p-col"><label for="policyholder" class="p-col-3">Mokėtojas</label></div>
-<div class="p-col"><input id="policyholder" type="text" pInputText value="SEB LIZINGAS" /></div>
+<div class="p-col"><input id="policyholder" type="text" pInputText value="SEB LIZINGAS" style="width:100%" /></div>
 <div class="p-col"><label for="policyholdercode" class="p-col-3 ">Kodas</label></div>
 <div class="p-col"><input id="policyholder" type="text" pInputText value="11110000"/></div>
 </div>
@@ -104,7 +112,7 @@ styleClass="p-button-primary p-mb-2 p-mr-2 btn"
             label="Toliau"
             icon="pi pi-chevron-right"
             iconPos="left"
-            styleClass="p-button-primary p-mb-2 p-m-2 p-p-2 btn"
+            styleClass="p-button-primary p-mb-2 p-m-2 p-p-2 btn p-button-sm"
             (click)=" newTabConditions = true; this.index = 1;"
           ></p-button>
         </div>
@@ -116,49 +124,78 @@ styleClass="p-button-primary p-mb-2 p-mr-2 btn"
 
   <p-tabPanel header="Draudimo sąlygos" >
     <h3>Standartinės draudimo sąlygos</h3>
-   
-    <p-table
-      [value]="parkConditions"
-      sortField="insType"
-      sortMode="single"
-      rowGroupMode="subheader"
-      groupRowsBy="insType"
-      styleClass="p-datatable-gridline p-datatable-sm"
-    >
-      <ng-template pTemplate="header">
-        <tr>
-          <th style="width:240px">Draudimo tipas</th>
-          <th style="width:120px">Amžius nuo [</th>
-          <th style="width:120px">Amžius iki )</th>
-          <th style="min-width:200px">Reikšmė</th>
-        </tr>
-      </ng-template>
 
-      <ng-template pTemplate="groupheader" let-condition>
-        <tr pRowGroupHeader>
-          <td colspan="4">
-            <span class="p-text-bold p-ml-2">{{ condition.insType }}</span>
-          </td>
-        </tr>
-      </ng-template>
+    <table style="width:50%;border-collapse:collapse;">
+    <tr style="text-align:left;"> 
+      <td style="border:1px solid #f1f1f1;padding:3px;  width:30%">Galiojimo teritorija</td>
+      <td style="border:1px solid #f1f1f1;padding:3px" ><input disabled style="width:100%" value="Europa"/> </td>
+    </tr>
+    <tr style="text-align:left">
+    <td style="border:1px solid #f1f1f1;padding:3px;">Paskirtis</td>
+      <td style="border:1px solid #f1f1f1;padding:3px" ><input disabled style="width:100%" value="Nepadidinta rizika"/></td>
+    </tr>
+    <tr style="text-align:left">
+    <td style="border:1px solid #f1f1f1;padding:3px; " colspan=2 >TP nusidėvėjimas</td>
+    </tr>
+    <tr style="text-align:left">
+    <td style="border:1px solid #f1f1f1;padding:3px">Draudiko pasirinkimu:</td>
+    <td style="border:1px solid #f1f1f1;padding:3px"><input disabled style="width:100%" value="TP virš 7 m."/></td>
+  </tr>
+    <tr style="text-align:left">
+      <td style="border:1px solid #f1f1f1;padding:3px">Draudėjo pasirinkimu:</td>
+      <td style="border:1px solid #f1f1f1;padding:3px"><input disabled style="width:100%" value="TP iki 6 m."/></td>
+    </tr>
 
-      <ng-template pTemplate="body" let-condition let-rowIndex="rowIndex">
-        <tr>
-          <td style="width:240px">
-            {{ condition.conditionType }}
-          </td>
-          <td style="width:100px">
-            {{ condition.ageFrom }}
-          </td>
-          <td style="width:100px">
-            <span>{{ condition.ageTo }}</span>
-          </td>
-          <td style="min-width:200px">
-            {{ condition.value }}
-          </td>
-        </tr>
-      </ng-template>
-    </p-table>
+    <tr style="text-align:left">
+    <td style="border:1px solid #f1f1f1;padding:3px; " colspan=2 >TP remontas</td>
+    </tr>
+    <tr style="text-align:left">
+    <td style="border:1px solid #f1f1f1;padding:3px">Draudiko pasirinkimu:</td>
+    <td style="border:1px solid #f1f1f1;padding:3px"><input disabled style="width:100%" value="TP virš 7 m."></td>
+  </tr>
+    <tr style="text-align:left">
+      <td style="border:1px solid #f1f1f1;padding:3px">Draudėjo pasirinkimu:</td>
+      <td style="border:1px solid #f1f1f1;padding:3px"><input disabled style="width:100%" value="TP iki 6 m."></td>
+    </tr>
+
+  </table>
+
+
+
+<br>
+
+  <table style="width:100%">
+    <tr>
+      <th style="text-align:left;border:1px solid #f1f1f1;padding:3px; background-color:#f1f1f1">TP Tipas</th>
+      <th style="text-align:left;border:1px solid #f1f1f1;padding:3px; background-color:#f1f1f1">Tarifas</th>
+      <th style="text-align:left;border:1px solid #f1f1f1;padding:3px; background-color:#f1f1f1">Išskaita rizikoms, EUR</th>
+      <th style="text-align:left;border:1px solid #f1f1f1;padding:3px; background-color:#f1f1f1">Išskaita vagystei, %</th>
+      <th style="text-align:left;border:1px solid #f1f1f1;padding:3px; background-color:#f1f1f1">Minimali įmoka, EUR</th>    
+      <th style="text-align:left;border:1px solid #f1f1f1;padding:3px; background-color:#f1f1f1">Draudimo variantas</th>  
+      <th style="text-align:left;border:1px solid #f1f1f1;padding:3px; background-color:#f1f1f1">Vairuotojas ir keleiviai</th>  
+      <th style="text-align:left;border:1px solid #f1f1f1;padding:3px; background-color:#f1f1f1">Pagalba kelyje</th>  
+    </tr>
+    <tr>
+      <td style="border:1px solid #f1f1f1;padding:3px">Lengvieji automobiliai</td>
+      <td style="border:1px solid #f1f1f1;padding:3px">0.25</td>
+      <td style="border:1px solid #f1f1f1;padding:3px">100</td>
+      <td style="border:1px solid #f1f1f1;padding:3px">10</td>
+      <td style="border:1px solid #f1f1f1;padding:3px">50</td>
+      <td style="border:1px solid #f1f1f1;padding:3px"><a href="https://www.compensa.lt/uploads/ECB/content_1593609690/savanoriskojo-transporto-priemoniu-draudimo-kasko-informacinis-dokumentas_2020_5503.pdf" target="_blank">Išplėstinis</a></td>
+      <td style="border:1px solid #f1f1f1;padding:3px">Taip</td>
+      <td style="border:1px solid #f1f1f1;padding:3px">Išplėstinė</td>
+    </tr>
+    <tr>
+    <td style="border:1px solid #f1f1f1;padding:3px">Krovininiai automobiliai</td>
+    <td style="border:1px solid #f1f1f1;padding:3px">0.25</td>
+    <td style="border:1px solid #f1f1f1;padding:3px">80</td>
+    <td style="border:1px solid #f1f1f1;padding:3px">10</td>
+    <td style="border:1px solid #f1f1f1;padding:3px">350</td>
+    <td style="border:1px solid #f1f1f1;padding:3px"><a href="https://www.compensa.lt/uploads/ECB/content_1593609690/savanoriskojo-transporto-priemoniu-draudimo-kasko-informacinis-dokumentas_2020_5503.pdf" target="_blank">Pagrindinis</a></td>
+    <td style="border:1px solid #f1f1f1;padding:3px">Ne</td>
+    <td style="border:1px solid #f1f1f1;padding:3px">Ne</td>
+  </tr>
+  </table>
     <p>Norint sudetinti kitas sąlygas, perduokite parko draudimą rizikos vertintojui.</p>
 
     <br />
@@ -168,7 +205,7 @@ styleClass="p-button-primary p-mb-2 p-mr-2 btn"
           label="Toliau"
           icon="pi pi-chevron-right"
           iconPos="left"
-          styleClass="p-button-primary p-mb-2 p-mr-2 btn"
+          styleClass="p-button-primary p-mb-2 p-mr-2 btn p-button-sm"
           (click)="newPaymentSchedule = true; this.index = 2"
         ></p-button>
 
@@ -177,7 +214,7 @@ styleClass="p-button-primary p-mb-2 p-mr-2 btn"
           label="Perduoti suderinimui"
           icon="pi pi-reply"
           iconPos="left"
-          styleClass="p-button-primary p-mb-2 p-mr-2 btn"
+          styleClass="p-button-primary p-mb-2 p-mr-2 btn p-button-sm"
           (click)="showDialogCRM()"
         ></p-button>
 
@@ -241,7 +278,7 @@ styleClass="p-button-primary p-mb-2 p-mr-2 btn"
         label="Išsaugoti ir tęsti"
         icon="pi pi-chevron-right"
         iconPos="left"
-        styleClass="p-button-primary p-mb-2 p-mr-2 btn"
+        styleClass="p-button-primary p-mb-2 p-mr-2 btn p-button-sm"
         (click)="newEmptyPark = true; this.index = 3"
       ></p-button>
     </div>
@@ -259,14 +296,14 @@ styleClass="p-button-primary p-mb-2 p-mr-2 btn"
             label="Įtraukti naują"
             icon="pi pi-plus"
             iconPos="left" (click)="showDialogAddVehicles();"
-            styleClass="p-button-success p-button-outlined p-mb-2 p-m-2 btn"
+            styleClass="p-button-success p-button-outlined p-mb-2 p-m-2 btn p-button-sm"
           ></p-button>
           <p-button
             label="Importuoti"
             icon="pi pi-arrow-circle-down"
             iconPos="left"
             (click)="ImportTab = true"
-            styleClass="p-button-success p-button-outlined p-mb-2 p-m-2  btn"
+            styleClass="p-button-success p-button-outlined p-mb-2 p-m-2  btn p-button-sm"
           ></p-button>
 
           <p-splitButton
@@ -274,7 +311,7 @@ styleClass="p-button-primary p-mb-2 p-mr-2 btn"
             icon="pi pi-ellipsis-v"
             (onClick)="save()"
             [model]="actionMenuItems"
-            styleClass=" p-button-outlined   p-mr-2 btn"
+            styleClass=" p-button-outlined   p-mr-2 btn p-button-sm"
           >
           </p-splitButton>
           <p-splitButton
@@ -282,7 +319,7 @@ styleClass="p-button-primary p-mb-2 p-mr-2 btn"
             icon="pi "
             (onClick)="save()"
             [model]="printMenuItems"
-            styleClass="p-button-outlined   p-mr-2 btn"
+            styleClass="p-button-outlined   p-mr-2 btn p-button-sm"
           >
           </p-splitButton>
         </div>

@@ -1,28 +1,27 @@
-:host >>> table td, th {
-
+:host >>> table td,
+th {
   margin: 2px;
+  font-size: 10pt;
+  padding: 1px;
+}
 
-padding: 1px;
-  }
+:host ::ng-deep .p-datatable .p-datatable-tbody > tr > td {
+  border: 1px solid #f1f1f1;
+  padding: 2px;
+}
 
-  :host ::ng-deep .p-datatable .p-datatable-tbody > tr > td {
-    border: 1px solid #f1f1f1;
-    padding: 2px;
-  }
+:host >>> label,
+input {
+  font-weight: 600; padding:2px; font-size: 10pt;
+}
 
-  :host >>> label, input {
+:host >>> .btn {
+  background-color: rgb(0, 134, 65);
+  border: 0px;
+}
 
-    font-weight: 600;
-    }
-  
-    :host >>> .btn {
-      background-color: rgb(0,134,65);
-      border: 0px;
-      }
-
-      :host >>> .p-button.p-button-success.p-button-outlined {
-        border-color: rgb(0,134,65);
-        color: rgb(0,134,65);
-        background-color:#f1f1f1;
-        }
-
+:host >>> .p-button.p-button-success.p-button-outlined {
+  border-color: rgb(0, 134, 65);
+  color: rgb(0, 134, 65);
+  background-color: #f1f1f1;
+}

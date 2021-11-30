@@ -76,8 +76,8 @@ styleClass="p-button-primary p-mb-2 p-mr-2 btn"
 
 <p-tabView>
   <p-tabPanel header="Parkas">
-    <h3><b>UAB TRANSPORTO ĮMONĖ</b> parko draudimas</h3>
-    <h5>Nr: PARK 00000001</h5>
+   
+ 
 
     <div class="card right">
       <p-toolbar>
@@ -86,14 +86,14 @@ styleClass="p-button-primary p-mb-2 p-mr-2 btn"
             label="Įtraukti naują"
             icon="pi pi-plus"
             iconPos="left" (click)="showDialogAddVehicles();"
-            styleClass="p-button-success p-button-outlined p-mb-2 p-m-2 btn"
+            styleClass="p-button-success p-button-outlined p-mb-2 p-m-2 btn p-button-sm"
           ></p-button>
           <p-button
             label="Importuoti"
             icon="pi pi-arrow-circle-down"
             iconPos="left"
             (click)="ImportTab = true"
-            styleClass="p-button-success p-button-outlined p-mb-2 p-m-2  btn"
+            styleClass="p-button-success p-button-outlined p-mb-2 p-m-2  btn p-button-sm"
           ></p-button>
 
           <p-splitButton
@@ -101,7 +101,7 @@ styleClass="p-button-primary p-mb-2 p-mr-2 btn"
             icon="pi pi-ellipsis-v"
             (onClick)="save()"
             [model]="actionMenuItems"
-            styleClass=" p-button-outlined   p-mr-2 btn"
+            styleClass=" p-button-outlined p-mr-2 btn p-inputbutton-sm"
           >
           </p-splitButton>
           <p-splitButton
@@ -109,7 +109,7 @@ styleClass="p-button-primary p-mb-2 p-mr-2 btn"
             icon="pi "
             (onClick)="save()"
             [model]="printMenuItems"
-            styleClass="p-button-outlined   p-mr-2 btn"
+            styleClass="p-button-outlined p-mr-2 btn p-splitbutton-sm"
           >
           </p-splitButton>
         </div>
@@ -170,14 +170,14 @@ styleClass="p-button-primary p-mb-2 p-mr-2 btn"
     >
       <ng-template pTemplate="caption">
         <div class="table-header">
-          Transporto priemonės
-          <span class="p-input-icon-left">
+          <label style="padding-right:5px;">Transporto priemonės paieška:</label>
+          <span class="p-input-icon-left" >
             <i class="pi pi-search"></i>
-            <input
+            <input style="margin-left:0px;padding:2px"
               pInputText
               type="text"
               (input)="dt.filterGlobal($event.target.value, 'contains')"
-              placeholder="Paieška"
+              placeholder=""
             />
           </span>
         </div>
@@ -335,10 +335,9 @@ styleClass="p-button-primary p-mb-2 p-mr-2 btn"
                   <td>
                     <table>
                       <tr>
-                        <td>
-                          <label for="vehicleType"
-                            >Transporto priemonės tipas</label
-                          >
+                        <td style="font-size:1.1em"> 
+                         
+                            Transporto priemonės tipas
                         </td>
                         <td>
                           <label style="font-weight:500;">{{
@@ -347,7 +346,7 @@ styleClass="p-button-primary p-mb-2 p-mr-2 btn"
                         </td>
                       </tr>
                       <tr>
-                        <td><label for="MakeModel">Markė ir modelis</label></td>
+                        <td>Markė ir modelis</td>
                         <td>
                           <label style="font-weight:500;"
                             >{{ policy.vehicle.make }}
@@ -357,7 +356,7 @@ styleClass="p-button-primary p-mb-2 p-mr-2 btn"
                       </tr>
                       <tr>
                         <td>
-                          <label for="MakeModel">Valstybinis numeris</label>
+                         Valstybinis numeris
                         </td>
                         <td>
                           <label style="font-weight:500;">{{
@@ -366,7 +365,7 @@ styleClass="p-button-primary p-mb-2 p-mr-2 btn"
                         </td>
                       </tr>
                       <tr>
-                        <td><label for="MakeModel">VIN numeris</label></td>
+                        <td>VIN numeris</td>
                         <td>
                           <label style="font-weight:500;">{{
                             policy.vehicle.vinNo
@@ -374,7 +373,7 @@ styleClass="p-button-primary p-mb-2 p-mr-2 btn"
                         </td>
                       </tr>
                       <tr>
-                        <td><label for="MakeModel">Gamybos metai</label></td>
+                        <td>Gamybos metai</td>
                         <td>
                           <label style="font-weight:500;"
                             >{{ policy.vehicle.manufYear }} m.</label
@@ -382,7 +381,7 @@ styleClass="p-button-primary p-mb-2 p-mr-2 btn"
                         </td>
                       </tr>
                       <tr>
-                        <td><label for="MakeModel">Masė</label></td>
+                        <td>Masė</td>
                         <td>
                           <label style="font-weight:500;"
                             >{{ policy.vehicle.mass }} kg.</label
@@ -390,7 +389,7 @@ styleClass="p-button-primary p-mb-2 p-mr-2 btn"
                         </td>
                       </tr>
                       <tr>
-                        <td><label for="MakeModel">Galia</label></td>
+                        <td>Galia</td>
                         <td>
                           <label style="font-weight:500;"
                             >{{ policy.vehicle.power }} kW</label
@@ -398,7 +397,7 @@ styleClass="p-button-primary p-mb-2 p-mr-2 btn"
                         </td>
                       </tr>
                       <tr>
-                        <td><label for="MakeModel">Kėbulas</label></td>
+                        <td>Kėbulas</td>
                         <td>
                           <label style="font-weight:500;">{{
                             policy.vehicle.bodyType
@@ -406,7 +405,7 @@ styleClass="p-button-primary p-mb-2 p-mr-2 btn"
                         </td>
                       </tr>
                       <tr>
-                        <td><label for="MakeModel">Kuro tipas</label></td>
+                        <td>Kuro tipas</td>
                         <td>
                           <label style="font-weight:500;">{{
                             policy.vehicle.fuelType
@@ -416,7 +415,7 @@ styleClass="p-button-primary p-mb-2 p-mr-2 btn"
 
                       <tr>
                         <td>
-                          <label for="MakeModel">Draudimo variantas</label>
+                          Draudimo variantas
                         </td>
                         <td>
                           <label style="font-weight:500;">{{
@@ -425,7 +424,7 @@ styleClass="p-button-primary p-mb-2 p-mr-2 btn"
                         </td>
                       </tr>
                       <tr>
-                        <td><label for="MakeModel">Išskaita</label></td>
+                        <td>Išskaita</td>
                         <td>
                           <label style="font-weight:500;">{{
                             policy.vehicle.deductiblePackageName
@@ -440,7 +439,7 @@ styleClass="p-button-primary p-mb-2 p-mr-2 btn"
                             label="Nutraukti"
                             icon="pi pi-times"
                             iconPos="left" 
-                            styleClass="p-button-success p-button-outlined p-mb-2 p-m-2  btn"
+                            styleClass="p-button-success p-button-outlined p-mb-2 p-m-2  btn p-button-sm"
                           ></p-button>
                         </td>
                       </tr>
@@ -498,13 +497,13 @@ styleClass="p-button-primary p-mb-2 p-mr-2 btn"
                               </tr>
                             </ng-template>
                             <ng-template pTemplate="summary">
-                              <div class="p-d-flex p-ai-center p-jc-between">
-                                Bendra įmoka: XXX EUR<br />
+                             
+                                <span style="font-size:10pt">Bendra įmoka: XXX EUR</span><br />
                                 <span *ngIf="policy.cancelationDate"
                                   >Nutraukimo data:
                                   {{ policy.cancelationDate }}</span
                                 >
-                              </div>
+                             
                             </ng-template>
                           </p-table>
                         </td>
@@ -602,7 +601,7 @@ styleClass="p-button-primary p-mb-2 p-mr-2 btn"
       <th style="text-align:left;border:1px solid #f1f1f1;padding:3px; background-color:#f1f1f1">Tarifas</th>
       <th style="text-align:left;border:1px solid #f1f1f1;padding:3px; background-color:#f1f1f1">Išskaita rizikoms, EUR</th>
       <th style="text-align:left;border:1px solid #f1f1f1;padding:3px; background-color:#f1f1f1">Išskaita vagystei, %</th>
-      <th style="text-align:left;border:1px solid #f1f1f1;padding:3px; background-color:#f1f1f1">Minimali įmoka</th>    
+      <th style="text-align:left;border:1px solid #f1f1f1;padding:3px; background-color:#f1f1f1">Minimali įmoka, EUR</th>    
       <th style="text-align:left;border:1px solid #f1f1f1;padding:3px; background-color:#f1f1f1">Draudimo variantas</th>  
       <th style="text-align:left;border:1px solid #f1f1f1;padding:3px; background-color:#f1f1f1">Vairuotojas ir keleiviai</th>  
       <th style="text-align:left;border:1px solid #f1f1f1;padding:3px; background-color:#f1f1f1">Pagalba kelyje</th>  
@@ -686,7 +685,7 @@ styleClass="p-button-primary p-mb-2 p-mr-2 btn"
           label="Sąskaita"
           icon="pi pi-file-pdf"
           iconPos="left" 
-          styleClass="p-button-success p-button-outlined"
+          styleClass="p-button-success p-button-outlined p-button-sm"
         ></p-button></td>
         </tr>
       </ng-template>
