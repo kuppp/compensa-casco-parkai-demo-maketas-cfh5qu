@@ -15,7 +15,7 @@ Patvirtinti nestandartines sąlygas
 label="Perduoti suderinimui"
 icon="pi pi-reply"
 iconPos="left"
-styleClass="p-button-primary p-mb-2 p-mr-2 btn"
+styleClass="p-button-primary p-m-1 btn"
 (click)="hideDialogCRM()"
 ></p-button>
 </ng-template>
@@ -112,7 +112,7 @@ styleClass="p-button-primary p-mb-2 p-mr-2 btn"
             label="Toliau"
             icon="pi pi-chevron-right"
             iconPos="left"
-            styleClass="p-button-primary p-mb-2 p-m-2 p-p-2 btn p-button-sm"
+            styleClass="p-button-primary p-m-1 btn p-button-sm"
             (click)=" newTabConditions = true; this.index = 1;"
           ></p-button>
         </div>
@@ -205,7 +205,7 @@ styleClass="p-button-primary p-mb-2 p-mr-2 btn"
           label="Toliau"
           icon="pi pi-chevron-right"
           iconPos="left"
-          styleClass="p-button-primary p-mb-2 p-mr-2 btn p-button-sm"
+          styleClass="p-button-primaryp-m-1 btn p-button-sm"
           (click)="newPaymentSchedule = true; this.index = 2"
         ></p-button>
 
@@ -214,7 +214,7 @@ styleClass="p-button-primary p-mb-2 p-mr-2 btn"
           label="Perduoti suderinimui"
           icon="pi pi-reply"
           iconPos="left"
-          styleClass="p-button-primary p-mb-2 p-mr-2 btn p-button-sm"
+          styleClass="p-button-primary p-m-1 btn p-button-sm"
           (click)="showDialogCRM()"
         ></p-button>
 
@@ -278,7 +278,7 @@ styleClass="p-button-primary p-mb-2 p-mr-2 btn"
         label="Išsaugoti ir tęsti"
         icon="pi pi-chevron-right"
         iconPos="left"
-        styleClass="p-button-primary p-mb-2 p-mr-2 btn p-button-sm"
+        styleClass="p-button-primary p-m-1 btn p-button-sm"
         (click)="newEmptyPark = true; this.index = 3"
       ></p-button>
     </div>
@@ -296,14 +296,14 @@ styleClass="p-button-primary p-mb-2 p-mr-2 btn"
             label="Įtraukti naują"
             icon="pi pi-plus"
             iconPos="left" (click)="showDialogAddVehicles();"
-            styleClass="p-button-success p-button-outlined p-mb-2 p-m-2 btn p-button-sm"
+            styleClass="p-button-success p-button-outlined p-m-1 btn p-button-sm"
           ></p-button>
           <p-button
             label="Importuoti"
             icon="pi pi-arrow-circle-down"
             iconPos="left"
             (click)="ImportTab = true"
-            styleClass="p-button-success p-button-outlined p-mb-2 p-m-2  btn p-button-sm"
+            styleClass="p-button-success p-button-outlined p-m-1  btn p-button-sm"
           ></p-button>
 
           <p-splitButton
@@ -311,7 +311,7 @@ styleClass="p-button-primary p-mb-2 p-mr-2 btn"
             icon="pi pi-ellipsis-v"
             (onClick)="save()"
             [model]="actionMenuItems"
-            styleClass=" p-button-outlined   p-mr-2 btn p-button-sm"
+            styleClass=" p-button-outlined   p-m-1 btn p-button-sm"
           >
           </p-splitButton>
           <p-splitButton
@@ -319,7 +319,7 @@ styleClass="p-button-primary p-mb-2 p-mr-2 btn"
             icon="pi "
             (onClick)="save()"
             [model]="printMenuItems"
-            styleClass="p-button-outlined   p-mr-2 btn p-button-sm"
+            styleClass="p-button-outlined   p-m-1 btn p-button-sm"
           >
           </p-splitButton>
         </div>
